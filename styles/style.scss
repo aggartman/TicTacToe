@@ -57,50 +57,137 @@ table {
     #{$value} * (clamp(#{$min}, 100vw, #{$max}) / #{$idealViewportWidth})
   );
 }
-
+html {
+  font-family: 'Righteous', cursive;
+}
 body {
-    width: 100vw;
-    height: 100vh;
-    background: rgb(61,184,167);
-    background: linear-gradient(310deg, rgba(61,184,167,0.75) 0%, rgba(240,187,75,0.75) 100%); 
+  width: 100vw;
+  height: 100vh;
+  background: rgb(61,184,167);
+  background: linear-gradient(310deg, rgba(61,184,167,0.75) 0%, rgba(240,187,75,0.75) 100%); 
 }
 .pageContainer {
-    box-sizing: border-box;
-    margin: 0;
-    padding: #{scaleValue(10)};
-    width: 100%;
-    height: 100%;
-    font-size: #{scaleValue(24)};
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
+  box-sizing: border-box;
+  margin: 0;
+  padding: #{scaleValue(10)};
+  width: 100%;
+  height: 100%;
+  font-size: #{scaleValue(24)};
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 .about {
-    grid-column: 1 / 2;
-    grid-row: 1;
+  grid-column: 1 / 2;
+  grid-row: 1;
+  height: fit-content;
+  box-sizing: border-box;
+  margin-left: #{scaleValue(30)};
+  margin-top: #{scaleValue(30)};
+  color: rgb(110, 58, 134);
+  text-shadow: 2px 3px 0.75px plum ;
+  .title {
+    font-size: #{scaleValue(55)};
+  }
+
+  p {
+    font-size: #{scaleValue(16)};
+    padding-top: #{scaleValue(10)};
+    padding-left: #{scaleValue(5)};
+    line-height: #{scaleValue(30)};
+  }
+}
+.gameModeContainer {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-left: #{scaleValue(30)};
+  button {
+    background-color: rgb(100, 148, 100);
+    border: none;
+    border-radius: #{scaleValue(25)};
+    font-size: #{scaleValue(25)};
+    font-family: inherit;
+    color: whitesmoke;
+    padding: #{scaleValue(10)} #{scaleValue(13)};
+  }
+}
+.gameMode {
+  grid-column: 1;
+}
+.dropdown {
+  width: fit-content;
+}
+.reset {
+  grid-column: 2;
+  display: block;
+  width: fit-content;
+  position: relative;
+  right: #{scaleValue(20)};
+}
+#clear {
+  font-size: #{scaleValue(15)};
+}
+#clear:hover {
+  background-color: rgb(137, 161, 137);
+}
+#clear:active {
+  background-color: rgb(74, 102, 74);
+}
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    color: rgb(29, 29, 29);
+    padding: #{scaleValue(5)} #{scaleValue(7)};
+    text-decoration: none;
+    display: block;
+    transition: background-color 1s, color 1s ease-in-out;
+  }
+}
+.dropdownContent a:hover {
+  background-color: rgb(100, 148, 100);
+  color: whitesmoke;
+}
+.gameMode:hover .dropdownContent {
+  display: block;
+}
+.gameMode:hover .dropdown {
+  background-color: rgb(137, 161, 137);
 }
 .game {
-    grid-column: 2 / 4;
-    grid-row: 1 / 5;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+  grid-column: 2 / 4;
+  grid-row: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 .gameContainer {
-    grid-column: 2 / 4;
-    grid-row: 2 / 4;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    background-color: slategray;
-    border: #{scaleValue(5)} solid slategrey; 
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: slategray;
+  border: #{scaleValue(5)} solid slategrey; 
 }
 .tile {
-    display: inline;
-    vertical-align: middle;
-    text-align: center;
-    margin: #{scaleValue(10)};
-    box-sizing: border-box;
-    background-color: white;
-    // align-self: center;
+  display: inline-grid;
+  margin: #{scaleValue(10)};
+  box-sizing: border-box;
+  background-color: white;
+}
+.marker {
+  text-align: center;
+  box-sizing: border-box;
+  margin: auto 0;
+  align-self: center;
+  justify-self: center;
+  font-size: #{scaleValue(60)};
+  color: rgb(133, 103, 64);
 }

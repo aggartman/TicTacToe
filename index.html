@@ -6,25 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
     <div class="pageContainer">
         <div class="about">
-            <h2 class="title">Tic-Tac-Toe</h2>
-            <p></p>
+            <h2 class="title">Tic Tac Toe</h2>
+            <p>Play a fun game of Tic Tac Toe with a friend, 
+                <br> or play against the computer to test your skills!
+            </p>
+        </div>
+        <div class="gameModeContainer">
+            <div class="gameMode">
+                <button class="dropdown">Game Mode</button>
+                <div class="dropdownContent">
+                    <a href="#" id='player2'>2 Players</a>
+                    <a href="#" id='ai'>AI</a>
+                </div>
+            </div>
+            <div class="reset">
+                <button id='clear' onclick="clearBoard();">Clear Gameboard</button>
+            </div>
+        </div>
+        <div id="twoPlayer">
+            <h2 class="player1">Player 1:</h2>
+            <div class='toggle'>
+                <span aria-hidden="true">X</span>
+                <input type="range" max="1" id="choice1" name="choice">
+                <span aria-hidden="true">O</span>
+            </div>
+            <div class="players">
+                <h3 class="player">Player 1:</h3>
+                <p id="player1"></p>
+                <h3 class="player">Player 2:</h3>
+                <p id="player2"></p>
+            </div>
+        </div>
+        <div id="computerPlay">
+            <h2 class="player1">Player 1:</h2>
+            <div class='toggle'>
+                <span aria-hidden="true">X</span>
+                <input type="range" max="1" id="choice2" name="choice">
+                <span aria-hidden="true">O</span>
+            </div>
+
         </div>
         <div class="game">
             <div class="gameContainer">
-                <div class="first tile"><p id="one"></p></div>
-                <div class="second tile"><p id="two"></p></div>
-                <div class="third tile"><p id="three"></p></div>
-                <div class="fourth tile"><p id="four"></p></div>
-                <div class="fifth tile"><p id="five"></p></div>
-                <div class="sixth tile"><p id="six"></p></div>
-                <div class="seventh tile"><p id="seven"></p></div>
-                <div class="eighth tile"><p id="eight"></p></div>
-                <div class="ninth tile"><p id="nine"></p></div>
+                <div class="tile"><p class='marker' id="one">X</p></div>
+                <div class="tile"><p class='marker' id="two">O</p></div>
+                <div class="tile"><p class='marker' id="three"></p></div>
+                <div class="tile"><p class='marker' id="four"></p></div>
+                <div class="tile"><p class='marker' id="five"></p></div>
+                <div class="tile"><p class='marker' id="six"></p></div>
+                <div class="tile"><p class='marker' id="seven"></p></div>
+                <div class="tile"><p class='marker' id="eight"></p></div>
+                <div class="tile"><p class='marker' id="nine"></p></div>
             </div>
         </div>
     </div>
