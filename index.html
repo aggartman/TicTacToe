@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/main.js" defer></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
@@ -23,50 +23,56 @@
             <div class="gameMode">
                 <button class="dropdown">Game Mode</button>
                 <div class="dropdownContent">
-                    <a href="#" id='player2'>2 Players</a>
-                    <a href="#" id='ai'>AI</a>
+                    <a href="#" id='secondPlayer' onclick="gameBoard.gameMode(player2)">2 Players</a>
+                    <a href="#" id='ai' onclick="gameBoard.gameMode(ai)">AI</a>
                 </div>
             </div>
             <div class="reset">
                 <button id='clear' onclick="clearBoard();">Clear Gameboard</button>
             </div>
         </div>
-        <div id="twoPlayer">
-            <h2 class="player1">Player 1:</h2>
-            <div class='toggle'>
+        <div class='playerContainer'>
+            <div id='gameTxt'>
+                <h3>Player 1 goes first</h3>
+            </div>
+            <div id="twoPlayer">
+                <h2 class="player1">Player 1:</h2>
+                <button class='playerSubmit' id="p2Submit" onclick="Player(2)">Set</button>
+            </div>
+            <div id="aiPlayer">
+                <h2 class="player1">Player 1:</h2>
+                <button class='playerSubmit' id="aiSubmit" onclick="Player(1)">Set</button>
+            </div>
+            <div class='toggle' id=playerChoice>
                 <span aria-hidden="true">X</span>
-                <input type="range" max="1" id="choice1" name="choice">
+                <input type="range" max="1" id="choice" name="choice">
                 <span aria-hidden="true">O</span>
             </div>
-            <div class="players">
-                <h3 class="player">Player 1:</h3>
-                <p id="player1"></p>
-                <h3 class="player">Player 2:</h3>
-                <p id="player2"></p>
-            </div>
+            <div id=players>
+            <h2 class="player1Token">Player 1:</h2>
+            <p class="player1Token" id="token1"></p>
+            <h2 class='player2Token' id=player2>Player 2:</h2>
+            <p id="token2"></p>
         </div>
-        <div id="computerPlay">
-            <h2 class="player1">Player 1:</h2>
-            <div class='toggle'>
-                <span aria-hidden="true">X</span>
-                <input type="range" max="1" id="choice2" name="choice">
-                <span aria-hidden="true">O</span>
-            </div>
-
         </div>
+        
         <div class="game">
             <div class="gameContainer">
-                <div class="tile"><p class='marker' id="one">X</p></div>
-                <div class="tile"><p class='marker' id="two">O</p></div>
-                <div class="tile"><p class='marker' id="three"></p></div>
-                <div class="tile"><p class='marker' id="four"></p></div>
-                <div class="tile"><p class='marker' id="five"></p></div>
-                <div class="tile"><p class='marker' id="six"></p></div>
-                <div class="tile"><p class='marker' id="seven"></p></div>
-                <div class="tile"><p class='marker' id="eight"></p></div>
-                <div class="tile"><p class='marker' id="nine"></p></div>
+                <div class="tile" id="one"><p class='marker' id='markOne'></p></div>
+                <div class="tile" id="two"><p class='marker' id='markTwo'></p></div>
+                <div class="tile" id="three"><p class='marker' id='markThree'></p></div>
+                <div class="tile" id="four"><p class='marker' id='markFour'></p></div>
+                <div class="tile" id="five"><p class='marker' id='markFive'></p></div>
+                <div class="tile" id="six"><p class='marker' id='markSix'></p></div>
+                <div class="tile" id="seven"><p class='marker' id='markSeven'></p></div>
+                <div class="tile" id="eight"><p class='marker' id='markEight'></p></div>
+                <div class="tile" id="nine"><p class='marker' id='markNine'></p></div>
             </div>
         </div>
+        <div id='gameOver'>
+            <h1 id='gameOverTxt'>Game Over</h1>
+        </div>
     </div>
+<script src="scripts/main.js"></script>
 </body>
 </html>

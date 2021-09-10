@@ -160,6 +160,78 @@ body {
 .gameMode:hover .dropdown {
   background-color: rgb(137, 161, 137);
 }
+.playerContainer {
+  grid-column: 1;
+  grid-row: 3;
+  padding-left: #{scaleValue(20)};
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(3, auto);
+}
+#gameTxt {
+  display: none;
+  grid-column: 1;
+  grid-row: 1;
+  font-size: #{scaleValue(20)};
+}
+#twoPlayer {
+  display: none;
+  grid-column: 1;
+  grid-row: 2;
+  padding-left: #{scaleValue(20)};
+  .playerSubmit {
+    position: absolute;
+    bottom: #{scaleValue(230)};
+    background-color: rgb(100, 148, 100);
+    border: none;
+    border-radius: #{scaleValue(25)};
+    font-size: #{scaleValue(15)};
+    font-family: inherit;
+    color: whitesmoke;
+    padding: #{scaleValue(5)} #{scaleValue(10)};
+    cursor: pointer;
+  } 
+}
+#aiPlayer {
+  display: none;
+  grid-column: 1;
+  grid-row: 2;
+  padding-left: #{scaleValue(20)};
+  .playerSubmit {
+    position: absolute;
+    bottom: #{scaleValue(230)};
+    background-color: rgb(100, 148, 100);
+    border: none;
+    border-radius: #{scaleValue(25)};
+    font-size: #{scaleValue(15)};
+    font-family: inherit;
+    color: whitesmoke;
+    padding: #{scaleValue(5)} #{scaleValue(10)};
+    cursor: pointer;
+  }
+}
+.toggle {
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  top: #{scaleValue(20)};
+  padding: #{scaleValue(10)} #{scaleValue(30)}; 
+  #choice {
+    width: 20%;
+  }
+}
+#players {
+  display: none;
+  grid-column: 1;
+  grid-row: 2;
+  padding-left: #{scaleValue(20)};
+  .player2Token {
+    padding-top: #{scaleValue(10)};
+  }
+}
 .game {
   grid-column: 2 / 4;
   grid-row: 1 / 5;
@@ -181,6 +253,7 @@ body {
   margin: #{scaleValue(10)};
   box-sizing: border-box;
   background-color: white;
+  cursor: pointer;
 }
 .marker {
   text-align: center;
@@ -190,4 +263,27 @@ body {
   justify-self: center;
   font-size: #{scaleValue(60)};
   color: rgb(133, 103, 64);
+}
+#gameOver {
+  display: none;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(17, 17, 17, 0.349);
+  #gameOverTxt {
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    top: 40%;
+    border-radius: #{scaleValue(20)};
+    font-size: #{scaleValue(100)};
+    color: rgb(126, 13, 35);
+    padding: #{scaleValue(15)};
+    background-color: rgba(255, 255, 255, 0.473);
+  }
 }
